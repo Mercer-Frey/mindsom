@@ -1,0 +1,438 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin: 0 
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline    
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display: block  
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q  
+  quotes: none
+ 
+blockquote
+  &:before, &:after  
+    content: ''
+    content: none 
+
+q 
+  &:before, &:after 
+    content: ''
+    content: none 
+
+table
+  border-collapse: collapse 
+  border-spacing: 0
+
+* 
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: $text2
+	opacity: 1
+	text-overflow: ellipsis
+	text-indent: 0px
+	transition: text-indent 0.4s ease
+
+*:focus::-webkit-input-placeholder
+	text-indent: 300px
+
+*:-moz-placeholder
+	color: $text2
+	opacity: 1
+	text-overflow: ellipsis
+	text-indent: 0px
+	transition: text-indent 0.4s ease
+
+*:focus:-moz-placeholder
+	text-indent: 300px
+
+*::-moz-placeholder
+	color: $text2
+	opacity: 1
+	text-overflow: ellipsis
+	text-indent: 0px
+	transition: text-indent 0.4s ease
+
+*:focus::-moz-placeholder
+	text-indent: 300px
+
+*:-ms-input-placeholder  
+	color: $text2
+	opacity: 1
+	text-overflow: ellipsis
+	text-indent: 0px
+	transition: text-indent 0.4s ease
+
+*:focus:-ms-input-placeholder
+	text-indent: 300px
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	--def: #96B7C4
+	--inv: #fff
+	height: 100% 
+	margin: 0
+	padding: 0
+	font-size: 10px
+	background-color: $accent1
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	margin: 0
+	padding: 0	
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent1
+	color: #fff
+
+b, strong
+	font-weight: bold
+
+.s-main
+	position: relative
+	font-size: 2rem
+	height: 100vh
+	min-height: 500px
+	width: 100% 
+	background-image: url(../img/fons/1.jpg)
+	background-size: cover
+	background-position: center center 
+	background-repeat: no-repeat
+	transition: 3s
+	z-index: 1 
+	&_header-top  
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+		z-index: 999 
+		background-color: rgba(255, 255, 255, 0.7)
+		&:before
+			position: absolute
+			content: ''
+			left: 0
+			top: 0
+			width: 100%
+			height: 100px
+			backdrop-filter: blur(15px)
+			background-size: cover
+			background-color: rgba($white1, .1)
+			z-index: -1
+		box-shadow: rgba($text2, .3) 0 0 0 2px
+		&__logo
+			padding: 16px 0 7px 0
+			width: auto  
+			height: auto
+			display: block
+		&__navigation
+			ul
+				padding: 0 110px 0 40px 
+				display: flex
+				justify-content: center
+				li  
+					position: relative
+					list-style: none
+					a
+						padding-left: 18px
+						padding-right: 18px
+						position: relative
+						display: block
+						text-decoration: none
+						color: $text1
+						Font-family: $default-font
+						Font-weight: bold 
+						Font-size: 15px 
+						Line-height: 60px  
+						Letter-spacing: 2%
+						box-sizing: border-box
+						transition: .5s						
+						&:hover
+							color: $white1
+							span
+ 						    transform-origin: bottom
+      					transform: scaleY(1)								
+						span
+							top: 0
+							position: absolute
+							width: 25%
+							height: 100%
+							background-color: $accent1
+							z-index: -1
+							transform-origin: top
+							transform: scaleY(0)
+							transition: transform .5s
+							&:nth-child(1)
+								left: 0
+								transition-delay: 0s
+							&:nth-child(2)
+								left: 25%
+								transition-delay: .15s
+							&:nth-child(3)
+								left: 50%
+								transition-delay: .3s
+							&:nth-child(4)
+								left: 75%
+								transition-delay: .45s		
+		&__search 
+			display: flex 
+			justify-content: space-between 
+			#search
+				background-repeat: no-repeat
+				background-position: 97% 50%
+				background-color: rgba(#fff, .5)
+				color: $text2
+				border-radius: 3px
+				padding: 7px 9px 
+				padding-right: 25px
+				Font-family: $default-font
+				Font-weight: 400
+				Font-size: 14px 
+				Line-height: 17px
+				Align: Left
+				Letter-spacing: 3%
+				display: block
+				width: 100%
+			#enter
+				margin-left: 18.83px
+				cursor: pointer
+	&_center
+		&__health
+			height: 50vh
+			display: flex
+			align-items: center 
+			justify-content: center
+			h1
+				padding-top: 10%
+				Font-family: Playfair
+				Font-weight: bold
+				Font-size: 46px 
+				Line-height: 17px
+				Letter-spacing: 0.04em		
+				font-style: normal		
+		&__form
+			height: 20vh				
+			display: flex
+			align-items: center 
+			&-flex
+				display: flex
+				justify-content: center
+				input, button
+					margin: 0 15px
+					padding: 10px 13px
+					line-height: 0
+					border-radius: 3px
+					width: 310px
+					font-family: $default-font
+					font-size: 15px
+					letter-spacing: 0.05em
+				input
+					background-color: rgba(#fff, .8)
+				button
+					padding-left: 50px
+					padding-right: 50px
+					font-weight: bold
+					background-color: rgba($accent3, .99)
+					text-align: center
+					text-decoration: none
+					border: none
+					white-space: nowrap
+					user-select: none
+					min-width: 0
+					height: auto
+					width: auto
+					cursor: pointer
+					outline: none
+					border-spacing: 0
+					text-indent: 0
+					color: $white1
+					box-shadow: 0px 3px 10px $accent1
+					&:active
+						transform: scale(0.98)
+						box-shadow: 0px 4px 8px $accent3
+				.btnfos
+				  border: 0 solid
+				  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0)
+				  outline-color: rgba(255, 255, 255, 0)
+				  outline-offset: 0px
+				  text-shadow: none
+				  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+				  outline-color: rgba(255, 255, 255, 0.5)
+				  outline-offset: 0px
+				  &:hover
+				    border: 1px solid
+				    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2)
+				    outline-offset: 15px
+				    outline-color: rgba(255, 255, 255, 0)
+				    text-shadow: 1px 1px 2px #427388						
+	&_post
+		position: absolute
+		left: 50%
+		bottom: 0
+		font-size: 17px
+		line-height: 21px
+		color: $text1
+		font-weight: 400
+		font-family: $default-font
+		letter-spacing: 0.05em
+		background-color: rgba($white2, .95)
+		border-radius: 60px 0 60px 0
+		padding: 25px 35px
+		box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.8)
+		transform: translate(-50%, 25px)
+
+.s-blogs
+	background-color: #fff
+	padding-top: 150px
+	padding-bottom: 110px
+	&-h2
+		Font-family: $default-font
+		Font-weight: 600
+		Font-size: 28px
+		Line-height: 34px
+		Letter-spacing: 5%
+		color: $text1
+	&-all
+		Font-family: $default-font
+		Font-weight: 400
+		Font-size: 14px
+		Line-height: 17px
+		Letter-spacing: 3%
+		color: $text1
+		&:hover
+			text-decoration: line-through
+			color: $text2
+	&_item
+		margin-top: 15px
+		width: 100%
+		&-caption
+			opacity: 0
+  		visibility: hidden
+			Font-family: $default-font
+			color: $text1
+			Font-weight: 700
+			Font-size: 20px
+			Line-height: 24px
+			Letter-spacing: 5%			
+			transition: .3s
+			transform: translateY(-30px) rotateY(180deg)
+			a
+				color: $accent1
+		&-img
+			width: 100%
+			height: 200px
+			background-size: cover
+			background-position: center center 
+			background-repeat: no-repeat
+			display: flex			
+			justify-content: center
+			align-items: center
+			text-align: center
+			position: relative
+			background-color: #fff
+			cursor: pointer
+			transition: all .5s
+			&:before, &:after
+				content: '';
+				position: absolute;
+				top: 8%;
+				right: 8%;
+				bottom: 8%;
+				left: 8%;
+				transition: 0.2s
+				background-color: rgba(#FFF, .2)
+			&:before
+				border-top: 1px solid #797979
+				border-bottom: 1px solid #797979
+				transform: scaleX(0)
+			&:after
+				border-left: 1px solid #797979
+				border-right: 1px solid #797979
+				transform: scaleY(0)
+			&:hover
+				&:before, &:after
+					transform: scale(1)
+				.s-blogs_item-caption
+					opacity: 1
+					visibility: visible
+					transform: translateY(0)
+		&-h2
+			Font-family: $default-font
+			Font-weight: 600
+			Font-size: 17px
+			Line-height: 19px
+			Letter-spacing: 4%
+			color: $text1
+			margin-top: 10px	
+		&-p
+			Font-family: $default-font
+			Font-weight: 400
+			Font-size: 14px
+			Line-height: 17px
+			Letter-spacing: 2%
+			color: $text1
+			margin-top: 10px	
+		&-info
+			margin-top: 10px	
+			&__data, &__review, &__likes, &__comments
+				width: 100%
+				Font-family: $default-font
+				Font-weight: 400
+				Font-size: 11px
+				Line-height: 13px
+				color: $text2
+			&__review, &__likes, &__comments
+				width: 20px
+				justify-content: center
+				align-items: center
+				text-align: center		
+				margin-left: 16px	
+				img
+					width: 12px
+					height: 12px	
+					margin-right: 3px
+					cursor: pointer
+@import "media" // Всегда в конце
